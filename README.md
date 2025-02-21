@@ -1,75 +1,37 @@
-# Nuxt Minimal Starter
+# 📌 Portfolio - Gabin
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Bienvenue sur le repository de mon **portfolio** ! 🚀
 
-## Setup
+## 🛠️ Tech Stack
+- **Framework :** Nuxt 3
+- **Style :** TailwindCSS
 
-Make sure to install dependencies:
+## 📂 Structure du projet
+- `assets/` : Images, icônes et fichiers statiques
+- `components/` : Composants réutilisables
+- `pages/` : Pages principales du site
+- `public/` : Ressources publiques accessibles directement
+- `server/` : (si applicable, précisez l'utilisation)
+- `app.vue` : Point d'entrée de l'application
+- `nuxt.config.ts` : Configuration du projet
 
-```bash
-# npm
-npm install
+## 🚀 Installation et exécution
 
-# pnpm
-pnpm install
+1. **Cloner le projet**
+   ```
+   git clone https://github.com/GabinHLY/portfolio.git
+   cd portfolio
+   ```
+2. **Installer les dépendances**
+   ```
+   npm install
+   ```
+3. **Lancer le serveur de développement**
+   ```
+   npm run dev
+   ```
 
-# yarn
-yarn install
+## 📌 Fonctionnalités prévues
+- [ ] Présentation de mes projets et de mes compétences
 
-# bun
-bun install
-```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
