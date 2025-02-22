@@ -1,14 +1,13 @@
 <template>
   <div class="content">
     <div class="back-button" @click="$router.push('/projects')">
-      ← Back to Projects
+      ← Retour aux projets
     </div>
 
     <div v-if="project" class="project-details">
       <h1 class="project-title">{{ project.name }}</h1>
       <div class="project-metadata">
         <span class="project-date">{{ project.date }}</span>
-        <span class="project-type">{{ getProjectType(project.name) }}</span>
       </div>
       
       <img 
@@ -18,15 +17,15 @@
       />
       
       <div class="project-content">
-        <h2>About this project</h2>
+        <h2>À propos de ce projet</h2>
         <p class="project-description">{{ project.description }}</p>
       </div>
     </div>
     
     <div v-else class="not-found">
-      <h2>Project Not Found</h2>
-      <p>Sorry, we couldn't find the project you're looking for.</p>
-      <router-link to="/projects" class="back-link">Return to Projects</router-link>
+      <h2>Projet indisponible</h2>
+      <p>Désolé, nous n'avons pas pu trouver le projet que vous recherchez.</p>
+      <router-link to="/projects" class="back-link">Retourner aux projets</router-link>
     </div>
   </div>
 </template>
@@ -43,46 +42,46 @@ export default {
     
     const projects = [
       { 
-        name: "CLUTCH | PERSONAL PROJECT", 
-        date: "2024 - NOW", 
+        name: "CLUTCH | PROJET PERSONNEL", 
+        date: "2024 - MAINTENANT", 
         slug: "clutch", 
         image: new URL('@/assets/images/valorant.jpg', import.meta.url).href,
-        description: "A betting platform for esports, featuring real-time odds updates and secure payment processing. Built with Vue.js and Node.js."
+        description: "CLUTCH est une application innovante dédiée aux passionnés d’e-sport, offrant une plateforme centralisée pour suivre les résultats, les calendriers et les lives des plus grandes compétitions. Conçu pour les amateurs et les parieurs, CLUTCH intègre un système de paris basé sur des jetons virtuels, permettant aux utilisateurs de tester leurs connaissances sans contraintes légales."
       },
       { 
         name: "SPORT ADDICT | PROFESSIONAL PROJECT", 
         date: "2024 - 2025", 
         slug: "sport-addict", 
         image: new URL('@/assets/images/valorant.jpg', import.meta.url).href,
-        description: "A betting platform for esports, featuring real-time odds updates and secure payment processing. Built with Vue.js and Node.js."
+        description: "SportAddict est un site vitrine conçu pour un magasin de vêtements de sport, mettant en avant ses produits sans fonctionnalité d’achat en ligne. Développé avec Nuxt, Directus et Tailwind CSS, il offre une navigation fluide et une présentation optimisée des articles, triés par marque et catégorie de sport. Ce site permet aux clients de découvrir l’offre du magasin et d’obtenir des informations essentielles sur les produits disponibles en boutique."
       },
       { 
         name: "HORSCAPE | SCHOOL PROJECT", 
         date: "2024 - NOW", 
         slug: "horscape", 
         image: new URL('@/assets/images/valorant.jpg', import.meta.url).href,
-        description: "A betting platform for esports, featuring real-time odds updates and secure payment processing. Built with Vue.js and Node.js."
+        description: "Horscape est une plateforme conçue pour la réservation de box pour chevaux, inspirée du modèle Airbnb. Elle permet aux propriétaires de chevaux de trouver et de réserver des hébergements adaptés à leurs besoins, tout en offrant aux propriétaires de box un moyen simple de gérer leurs disponibilités. Développée avec une approche centrée sur l’expérience utilisateur, Horscape facilite la mise en relation entre les passionnés d’équitation et les structures d’accueil, en intégrant des fonctionnalités intuitives pour une réservation rapide et sécurisée."
       },
       { 
         name: "API_UNIVERSE | SCHOOL PROJECT", 
         date: "2024 - 2025", 
         slug: "api-universe", 
         image: new URL('@/assets/images/valorant.jpg', import.meta.url).href,
-        description: "A betting platform for esports, featuring real-time odds updates and secure payment processing. Built with Vue.js and Node.js."
+        description: "API_Universe est un projet académique visant à créer une API connectée à un frontend, permettant aux utilisateurs d’imaginer et de construire leurs propres univers peuplés de personnages interactifs. Grâce à l’intelligence artificielle, l’application génère des visuels uniques pour les mondes et leurs habitants, tout en offrant une expérience immersive où les utilisateurs peuvent dialoguer avec leurs créations. Cette fusion entre storytelling, IA et génération d’images ouvre la voie à une nouvelle forme d’interaction narrative et créative."
       },
       { 
         name: "STOCK | PERSONAL PROJECT", 
         date: "2024 - 2025", 
         slug: "stock", 
         image: new URL('@/assets/images/valorant.jpg', import.meta.url).href,
-        description: "A betting platform for esports, featuring real-time odds updates and secure payment processing. Built with Vue.js and Node.js."
+        description: "STOCK est un outil de gestion de stocks développé avec React, Express et MySQL, conçu pour simplifier le suivi des produits d’un magasin. Il permet d’ajouter, modifier et supprimer des articles tout en affichant leur quantité disponible en temps réel. Grâce à une interface intuitive, les utilisateurs peuvent facilement gérer leur inventaire et éviter les ruptures de stock. Cet outil offre une solution efficace pour optimiser la gestion des produits et faciliter le suivi des entrées et sorties en magasin."
       },
       { 
         name: "BREAKOUT | SCHOOL PROJECT", 
         date: "2024", 
         slug: "breakout", 
         image: new URL('@/assets/images/valorant.jpg', import.meta.url).href,
-        description: "A betting platform for esports, featuring real-time odds updates and secure payment processing. Built with Vue.js and Node.js."
+        description: "Breakout est un projet académique réalisé en équipe de trois, consistant à recréer le célèbre jeu d’arcade Breakout. Fidèle au gameplay original, le projet met en œuvre une gestion précise des collisions, une physique dynamique et une progression de difficulté. Ce développement a permis d’explorer des concepts clés du game development, comme la gestion des animations, les interactions avec le joueur et l’optimisation des performances."
       },
       
     ];
