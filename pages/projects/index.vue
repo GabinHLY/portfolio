@@ -1,6 +1,6 @@
 <template>
     <div class="content">
-      <h1 class="title">PROJECTS</h1>
+      <h1 class="title">PROJETS</h1>
   
       <div class="projects-container">
         <div class="projects-list">
