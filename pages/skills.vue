@@ -31,35 +31,46 @@
   </template>
   
   <script>
-  export default {
-    data() {
-      return {
-        activeSection: null,
-        frontendSkills: [
-          { name: 'HTML', icon: '../assets/icons/html.png' },
-          { name: 'CSS', icon: '../assets/icons/css.png' },
-          { name: 'JavaScript', icon: '../assets/icons/js.png' },
-          { name: 'Vue.js', icon: '../assets/icons/vue.png' }
-        ],
-        backendSkills: [
-          { name: 'Node.js', icon: '../assets/icons/node.png' },
-          { name: 'Express', icon: '../assets/icons/express.png' },
-          { name: 'PHP', icon: '../assets/icons/php.png' },
-          { name: 'MySQL', icon: '../assets/icons/mysql.png' }
-        ],
-        toolsSkills: [
-          { name: 'Git', icon: '/icons/git.png' },
-          { name: 'Docker', icon: '/icons/docker.png' },
-          { name: 'Webpack', icon: '/icons/webpack.png' }
-        ]
-      };
-    },
-    methods: {
-      toggleSection(section) {
-        this.activeSection = this.activeSection === section ? null : section;
-      }
+  import htmlIcon from '../assets/icons/html.png';
+import cssIcon from '../assets/icons/css.png';
+import jsIcon from '../assets/icons/js.png';
+import vueIcon from '../assets/icons/vue.png';
+import nodeIcon from '../assets/icons/node.png';
+import expressIcon from '../assets/icons/express.png';
+import phpIcon from '../assets/icons/php.png';
+import mysqlIcon from '../assets/icons/mysql.png';
+import gitIcon from '../assets/icons/git.png';
+import dockerIcon from '../assets/icons/docker.png';
+
+export default {
+  data() {
+    return {
+      activeSection: null,
+      frontendSkills: [
+        { name: 'HTML', icon: htmlIcon },
+        { name: 'CSS', icon: cssIcon },
+        { name: 'JavaScript', icon: jsIcon },
+        { name: 'Vue.js', icon: vueIcon }
+      ],
+      backendSkills: [
+        { name: 'Node.js', icon: nodeIcon },
+        { name: 'Express', icon: expressIcon },
+        { name: 'PHP', icon: phpIcon },
+        { name: 'MySQL', icon: mysqlIcon }
+      ],
+      toolsSkills: [
+        { name: 'Git', icon: gitIcon },
+        { name: 'Docker', icon: dockerIcon }
+      ]
+    };
+  },
+  methods: {
+    toggleSection(section) {
+      this.activeSection = this.activeSection === section ? null : section;
     }
-  };
+  }
+};
+
   </script>
   
   <style scoped>
@@ -111,8 +122,9 @@
   }
   
   .skill-icon {
-    width: 40px;
+    width: 100%;
     height: 40px;
+    object-fit: contain;
   }
   </style>
   
