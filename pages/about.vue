@@ -1,7 +1,6 @@
 <template>
   <div class="content">
     <h1 class="title">A PROPOS</h1>
-
     <div class="profile">
       <img src="../assets/images/Leonard_pres.png" alt="Image" class="image-profile">
       <p class="description">
@@ -66,27 +65,25 @@ const experiences = [
 </script>
 
 <style scoped>
-/* Section principale */
 .content {
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
-  text-align: left;
-  padding: 40px 20px 0;
+  padding: 40px 20px;
 }
 
 /* Profil */
 .profile {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
-  margin-top: 20px;
 }
 
 .image-profile {
-  width: 400px;
-  height: 500px;
-  max-height: 300px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
 }
 
 .description {
@@ -97,78 +94,55 @@ const experiences = [
 
 /* Timeline */
 .timeline-section {
-  margin-top: 60px;
-}
-
-.timeline-title {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 5rem;
-  font-weight: 900;
-  text-align: center;
-  color:#E55C0E;
-  margin: 0;
-  letter-spacing: 7.5px;
+  margin-top: 50px;
 }
 
 .timeline {
   position: relative;
-  max-width: 800px;
+  max-width: 100%;
   margin: auto;
   padding: 20px 0;
-  border-left: 4px solid #E65100; /* Ligne verticale */
+  border-left: 4px solid #E65100;
 }
 
 .timeline-item {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   position: relative;
   margin-bottom: 40px;
   padding-left: 30px;
+  min-height: 180px;
 }
 
 .timeline-marker {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   background: #E65100;
   border-radius: 50%;
   position: absolute;
-  left: -10px;
+  left: -8px;
   top: 5px;
 }
 
 .timeline-date {
   font-weight: bold;
   color: #E65100;
-  min-width: 150px;
+  min-width: 120px;
   text-align: right;
   margin-right: 20px;
 }
 
 .timeline-content {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   flex: 1;
-  min-height: 180px; /* Hauteur minimale pour uniformiser */
+  min-height: 160px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.timeline-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Ajuste la hauteur du texte pour éviter les écarts */
-.experience-description {
-  flex-grow: 1; /* Force la description à occuper un espace égal */
-  min-height: 50px; /* Hauteur fixe pour éviter les variations */
-  display: flex;
-  align-items: center; /* Aligne verticalement */
 }
 
 .tags {
@@ -178,14 +152,41 @@ const experiences = [
 }
 
 .tag {
-  display: inline-block;
   background: #E65100;
   color: white;
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.85rem;
   font-weight: bold;
   margin-right: 5px;
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .timeline-date {
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  .timeline-marker {
+    display: none;
+  }
+}
 </style>

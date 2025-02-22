@@ -39,15 +39,46 @@ body {
     transition: background-color 0.3s ease; 
   }
 
+/* Style du titre */
+.title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 200px;
+  font-weight: 900;
+  text-align: center;
+  color: #E55C0E;
+  margin: 0;
+  letter-spacing: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
   .title {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 200px;
-    font-weight: 900;
-    text-align: center;
-    color:#E55C0E;
-    margin: 0;
-    letter-spacing: 1rem;
+      font-size: 150px;
+      letter-spacing: 0.8rem;
   }
+}
+
+@media (max-width: 992px) {
+  .title {
+      font-size: 100px;
+      letter-spacing: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+      font-size: 70px;
+      letter-spacing: 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+      font-size: 50px;
+      letter-spacing: 0.2rem;
+  }
+}
+
   
 
 
