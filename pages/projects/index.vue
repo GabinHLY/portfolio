@@ -27,12 +27,12 @@
     data() {
       return {
         projects: [
-          { name: "CLUTCH | PERSONAL PROJECT", date: "2024 - NOW", slug: "clutch", image: new URL('@/assets/images/valorant.jpg', import.meta.url).href },
-          { name: "SPORT ADDICT | PROFESSIONAL PROJECT", date: "2024 - 2025", slug: "sport-addict", image: "/images/project2.png" },
-          { name: "HORSCAPE | SCHOOL PROJECT", date: "2024 - 2025", slug: "horscape", image: "/images/project3.png" },
-          { name: "API_UNIVERSE | SCHOOL PROJECT", date: "2024 - 2025", slug: "api-universe", image: "/images/project4.png" },
-          { name: "STOCK | PERSONAL PROJECT", date: "2024", slug: "stock", image: "/images/project5.png" },
-          { name: "BREAKOUT | SCHOOL PROJECT", date: "2024", slug: "breakout", image: "/images/project6.png" },
+          { name: "CLUTCH | PROJET PERSONNEL", date: "2024 - MAINTENANT", slug: "clutch", image: new URL('@/assets/images/valorant.jpg', import.meta.url).href },
+          { name: "SPORT ADDICT | PROJET PROFESSIONEL", date: "2024 - 2025", slug: "sport-addict", image: "/images/project2.png" },
+          { name: "HORSCAPE | PROJET ACADÉMIQUE", date: "2024 - MAINTENANT", slug: "horscape", image: "/images/project3.png" },
+          { name: "API_UNIVERSE | PROJET ACADÉMIQUE", date: "2024 - 2025", slug: "api-universe", image: "/images/project4.png" },
+          { name: "STOCK | PROJET PERSONNEL", date: "2024", slug: "stock", image: "/images/project5.png" },
+          { name: "BREAKOUT | PROJET ACADÉMIQUE", date: "2024", slug: "breakout", image: "/images/project6.png" },
         ]
       };
     }

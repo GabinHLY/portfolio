@@ -6,8 +6,8 @@
       <img src="../assets/images/KawhiLeonard1.jpg" alt="Image" class="image-left">
       <div class="text-section">
         <h2 class="web-title">
-          <span class="black-bold">WEB</span> 
-          <span class="black-bold">DEVELOPER</span>
+          <span class="black-bold">DÉVELOPPEUR</span> 
+          <span class="black-bold">WEB</span>
         </h2>
         <img src="../assets/images/KawhiLeonard2.jpg" alt="Image" class="image-right">
         <p class="description">

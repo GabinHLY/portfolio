@@ -4,14 +4,18 @@
 
     <div class="profile">
       <img src="../assets/images/Leonard_pres.png" alt="Image" class="image-profile">
-      <p class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-        sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+        <p class="description">
+          Je m'appelle Gabin, un passionné de développement web avec une approche axée sur l'innovation et la performance.<br>
+          Curieux et rigoureux, je suis toujours à la recherche de nouveaux défis pour progresser et affiner mes compétences techniques.<br>
+          <br>
+          💡 Pourquoi le développement web ?<br>
+          Parce que j’aime créer, expérimenter et voir mes idées prendre vie à travers des interfaces modernes et interactives.<br>
+          <br>
+          🎯 Mon objectif ?<br>
+          Évoluer dans le domaine du développement web, travailler sur des projets variés et pourquoi pas, intégrer une entreprise dynamique où je pourrais continuer à apprendre et à innover.<br>
+          <br>
+          Si tu veux en savoir plus ou échanger sur un projet, contacte-moi !
+        </p>
     </div>
   </div>
 </template>
