@@ -30,7 +30,7 @@
 /* Conteneur principal */
 .container {
   width: 100%;
-  min-height: 100vh;
+  min-height: 50vh;
   padding: 20px;
   display: flex;
   flex-direction: column;

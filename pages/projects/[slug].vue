@@ -6,12 +6,11 @@
 
     <div v-if="project" class="project-details">
       <div class="header">
-        <h1 class="project-title">{{ project.name }}</h1>
+        <h1 class="title">{{ project.name }}</h1>
         <span class="project-subtitle">{{ project.subtitle }}</span>
         <span class="project-date">{{ project.date }}</span>
       </div>
-
-      <img 
+      <div class="ligne"><img 
         :src="project.image" 
         :alt="project.name" 
         class="project-image"
@@ -21,7 +20,8 @@
         <h2>À propos de ce projet</h2>
         <p class="project-description">{{ project.description }}</p>
       </div>
-
+</div>
+      
       <button class="learn-more">LEARN MORE</button>
     </div>
 
@@ -106,94 +106,133 @@ export default {
 };
 </script>
 <style scoped>
+/* Amélioration du style pour une meilleure mise en page et lisibilité */
 .content {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 50px 20px;
+  font-family: 'Inter', sans-serif;
+
+  border-radius: 12px;
 }
 
 .back-button {
   cursor: pointer;
   display: inline-block;
-  padding: 8px 16px;
-  margin-bottom: 32px;
-  color: #666;
-  transition: color 0.3s;
+  padding: 10px 18px;
+  margin-bottom: 30px;
+  color: #E55C0E;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
 }
 
 .back-button:hover {
-  color: #e65100;
+  color: #E55C0E;
 }
 
 .project-details {
-  text-align: left;
+  text-align: center;
+  padding: 40px;
 }
 
-.project-title {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
-  color: #333;
-}
 
-.project-metadata {
-  margin-bottom: 32px;
-}
-
-.project-date,
-.project-type {
-  display: inline-block;
-  margin-right: 24px;
+.project-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
   color: #666;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.project-date {
   font-size: 1.1rem;
+  font-weight: 500;
+  color: #888;
+}
+
+.ligne {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
 }
 
 .project-image {
-  width: 100%;
-  max-width: 100%;
+  width: 50%;
   height: auto;
   border-radius: 8px;
-  margin-bottom: 32px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project-image:hover {
+  transform: scale(1.05);
 }
 
 .project-content {
-  max-width: 800px;
+  width: 45%;
+  text-align: left;
 }
 
 .project-content h2 {
-  font-size: 1.8rem;
-  margin-bottom: 16px;
-  color: #444;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
 }
 
 .project-description {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #555;
+  color: #444;
+}
+
+.learn-more {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 24px;
+  background-color: #ff5722;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.learn-more:hover {
+  background-color: #e64a19;
 }
 
 .not-found {
   text-align: center;
-  padding: 48px 0;
+  padding: 50px 0;
 }
 
 .not-found h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 16px;
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 20px;
 }
 
 .back-link {
   display: inline-block;
-  margin-top: 24px;
-  padding: 12px 24px;
-  background-color: #e65100;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #ff5722;
   color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
   text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: background 0.3s;
 }
 
 .back-link:hover {
   background-color: #d84315;
 }
+
 </style>
