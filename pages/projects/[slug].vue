@@ -7,22 +7,27 @@
     <div v-if="project" class="project-details">
       <div class="header">
         <h1 class="title">{{ project.name }}</h1>
-        <span class="project-subtitle">{{ project.subtitle }}</span>
-        <span class="project-date">{{ project.date }}</span>
-      </div>
-      <div class="ligne"><img 
-        :src="project.image" 
-        :alt="project.name" 
-        class="project-image"
-      />
 
-      <div class="project-content">
-        <h2>À propos de ce projet</h2>
-        <p class="project-description">{{ project.description }}</p>
+        <!-- Conteneur flex pour aligner le sous-titre à gauche et la date à droite -->
+        <div class="project-meta">
+          <span class="project-subtitle">{{ project.subtitle }}</span>
+          <span class="project-date">{{ project.date }}</span>
+        </div>
       </div>
-</div>
-      
-      <button class="learn-more">LEARN MORE</button>
+
+      <div class="ligne">
+        <img 
+          :src="project.image" 
+          :alt="project.name" 
+          class="project-image"
+        />
+        <div class="project-content">
+          <h2>A PROPOS DE CE PROJET</h2>
+          <p class="project-description">{{ project.description }}</p>
+        </div>
+      </div>
+
+      <button class="learn-more">Voir le site</button>
     </div>
 
     <div v-else class="not-found">
@@ -48,7 +53,7 @@ export default {
       { 
         name: "CLUTCH", 
         date: "2024 - MAINTENANT", 
-        subtitle : "PROJET PERSONNEL",
+        subtitle: "PROJET PERSONNEL",
         slug: "clutch", 
         image: valorantImage,
         description: "CLUTCH est une application innovante dédiée aux passionnés d’e-sport, offrant une plateforme centralisée pour suivre les résultats, les calendriers et les lives des plus grandes compétitions. Conçu pour les amateurs et les parieurs, CLUTCH intègre un système de paris basé sur des jetons virtuels, permettant aux utilisateurs de tester leurs connaissances sans contraintes légales."
@@ -56,43 +61,11 @@ export default {
       { 
         name: "SPORT ADDICT", 
         date: "2024 - 2025",
-        subtitle : "PROJET PROFESSIONNEL", 
+        subtitle: "PROJET PROFESSIONNEL", 
         slug: "sport-addict", 
         image: valorantImage,
         description: "SportAddict est un site vitrine conçu pour un magasin de vêtements de sport, mettant en avant ses produits sans fonctionnalité d’achat en ligne. Développé avec Nuxt, Directus et Tailwind CSS, il offre une navigation fluide et une présentation optimisée des articles, triés par marque et catégorie de sport. Ce site permet aux clients de découvrir l’offre du magasin et d’obtenir des informations essentielles sur les produits disponibles en boutique."
-      },
-      { 
-        name: "HORSCAPE", 
-        date: "2024 - NOW", 
-        subtitle : "PROJET ACADÉMIQUE",
-        slug: "horscape", 
-        image: valorantImage,
-        description: "Horscape est une plateforme conçue pour la réservation de box pour chevaux, inspirée du modèle Airbnb. Elle permet aux propriétaires de chevaux de trouver et de réserver des hébergements adaptés à leurs besoins, tout en offrant aux propriétaires de box un moyen simple de gérer leurs disponibilités. Développée avec une approche centrée sur l’expérience utilisateur, Horscape facilite la mise en relation entre les passionnés d’équitation et les structures d’accueil, en intégrant des fonctionnalités intuitives pour une réservation rapide et sécurisée."
-      },
-      { 
-        name: "API_UNIVERSE", 
-        date: "2024 - 2025", 
-        subtitle : "PROJET ACADÉMIQUE",
-        slug: "api-universe", 
-        image: valorantImage,
-        description: "API_Universe est un projet académique visant à créer une API connectée à un frontend, permettant aux utilisateurs d’imaginer et de construire leurs propres univers peuplés de personnages interactifs. Grâce à l’intelligence artificielle, l’application génère des visuels uniques pour les mondes et leurs habitants, tout en offrant une expérience immersive où les utilisateurs peuvent dialoguer avec leurs créations. Cette fusion entre storytelling, IA et génération d’images ouvre la voie à une nouvelle forme d’interaction narrative et créative."
-      },
-      { 
-        name: "STOCK", 
-        date: "2024 - 2025", 
-        subtitle : "PROJET PERSONNEL",
-        slug: "stock", 
-        image: valorantImage,
-        description: "STOCK est un outil de gestion de stocks développé avec React, Express et MySQL, conçu pour simplifier le suivi des produits d’un magasin. Il permet d’ajouter, modifier et supprimer des articles tout en affichant leur quantité disponible en temps réel. Grâce à une interface intuitive, les utilisateurs peuvent facilement gérer leur inventaire et éviter les ruptures de stock. Cet outil offre une solution efficace pour optimiser la gestion des produits et faciliter le suivi des entrées et sorties en magasin."
-      },
-      { 
-        name: "BREAKOUT", 
-        date: "2024", 
-        subtitle : "PROJET ACADÉMIQUE",
-        slug: "breakout", 
-        image: valorantImage,
-        description: "Breakout est un projet académique réalisé en équipe de trois, consistant à recréer le célèbre jeu d’arcade Breakout. Fidèle au gameplay original, le projet met en œuvre une gestion précise des collisions, une physique dynamique et une progression de difficulté. Ce développement a permis d’explorer des concepts clés du game development, comme la gestion des animations, les interactions avec le joueur et l’optimisation des performances."
-      },
+      }
     ];
 
     const loadProject = () => {
@@ -105,17 +78,18 @@ export default {
   }
 };
 </script>
+
 <style scoped>
-/* Amélioration du style pour une meilleure mise en page et lisibilité */
+/* Contenu principal */
 .content {
   max-width: 1100px;
   margin: 0 auto;
   padding: 50px 20px;
   font-family: 'Inter', sans-serif;
-
   border-radius: 12px;
 }
 
+/* Bouton retour */
 .back-button {
   cursor: pointer;
   display: inline-block;
@@ -131,26 +105,39 @@ export default {
   color: #E55C0E;
 }
 
+/* En-tête du projet */
 .project-details {
   text-align: center;
   padding: 40px;
 }
 
+/* Conteneur flex pour aligner le sous-titre et la date */
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 10px auto;
+}
 
 .project-subtitle {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #666;
-  display: block;
-  margin-bottom: 10px;
+  font-style: italic;
+  color: #111;
+  text-align: left;
 }
 
 .project-date {
   font-size: 1.1rem;
-  font-weight: 500;
-  color: #888;
+  font-weight: 600;
+  font-style: italic;
+  color: #111;
+  text-align: right;
 }
 
+/* Conteneur principal du projet */
 .ligne {
   display: flex;
   flex-direction: row;
@@ -159,6 +146,7 @@ export default {
   margin-top: 30px;
 }
 
+/* Image du projet */
 .project-image {
   width: 50%;
   height: auto;
@@ -170,24 +158,30 @@ export default {
   transform: scale(1.05);
 }
 
+/* Description du projet */
 .project-content {
   width: 45%;
+  display: flex;
   text-align: left;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .project-content h2 {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 15px;
-  color: #333;
+  color: #111;
 }
 
 .project-description {
   font-size: 1.2rem;
-  line-height: 1.6;
-  color: #444;
+  font-weight: 400;
+  color: #111;
 }
 
+/* Bouton "Learn More" */
 .learn-more {
   display: inline-block;
   margin-top: 20px;
@@ -207,6 +201,7 @@ export default {
   background-color: #e64a19;
 }
 
+/* Projet introuvable */
 .not-found {
   text-align: center;
   padding: 50px 0;
@@ -234,5 +229,4 @@ export default {
 .back-link:hover {
   background-color: #d84315;
 }
-
 </style>
