@@ -5,7 +5,7 @@
       <div class="title">SKILLS</div>
 
       <!-- Image de profil -->
-      <img src="../assets/images/shoot.jpg" alt="Profile Image" class="profile-image" />
+      <img :src="profileImage" alt="Profile Image" class="profile-image" />
     </div>
 
     <!-- Liste des compétences -->
@@ -21,45 +21,35 @@
 </template>
 
 <script>
-import htmlIcon from '../assets/icons/html.png';
-import cssIcon from '../assets/icons/css.png';
-import jsIcon from '../assets/icons/js.png';
-import vueIcon from '../assets/icons/vue.png';
-import nodeIcon from '../assets/icons/node.png';
-import expressIcon from '../assets/icons/express.png';
-import phpIcon from '../assets/icons/php.png';
-import mysqlIcon from '../assets/icons/mysql.png';
-import gitIcon from '../assets/icons/git.png';
-import dockerIcon from '../assets/icons/docker.png';
-
 export default {
   data() {
     return {
       activeSection: null,
+      profileImage: new URL('@/assets/images/shoot.jpg', import.meta.url).href,
       skillCategories: {
         frontend: {
           title: 'FRONT-END',
           skills: [
-            { name: 'HTML', icon: htmlIcon },
-            { name: 'CSS', icon: cssIcon },
-            { name: 'JavaScript', icon: jsIcon },
-            { name: 'Vue.js', icon: vueIcon }
+            { name: 'HTML', icon: new URL('@/assets/icons/html.png', import.meta.url).href },
+            { name: 'CSS', icon: new URL('@/assets/icons/css.png', import.meta.url).href },
+            { name: 'JavaScript', icon: new URL('@/assets/icons/js.png', import.meta.url).href },
+            { name: 'Vue.js', icon: new URL('@/assets/icons/vue.png', import.meta.url).href }
           ]
         },
         backend: {
           title: 'BACK-END',
           skills: [
-            { name: 'Node.js', icon: nodeIcon },
-            { name: 'Express', icon: expressIcon },
-            { name: 'PHP', icon: phpIcon },
-            { name: 'MySQL', icon: mysqlIcon }
+            { name: 'Node.js', icon: new URL('@/assets/icons/node.png', import.meta.url).href },
+            { name: 'Express', icon: new URL('@/assets/icons/express.png', import.meta.url).href },
+            { name: 'PHP', icon: new URL('@/assets/icons/php.png', import.meta.url).href },
+            { name: 'MySQL', icon: new URL('@/assets/icons/mysql.png', import.meta.url).href }
           ]
         },
         tools: {
           title: 'OUTILS',
           skills: [
-            { name: 'Git', icon: gitIcon },
-            { name: 'Docker', icon: dockerIcon }
+            { name: 'Git', icon: new URL('@/assets/icons/git.png', import.meta.url).href },
+            { name: 'Docker', icon: new URL('@/assets/icons/docker.png', import.meta.url).href }
           ]
         }
       }
@@ -107,9 +97,9 @@ export default {
 }
 
 .title {
-    transform: rotate(0deg);
-    writing-mode: vertical-lr;
-  }
+  transform: rotate(0deg);
+  writing-mode: vertical-lr;
+}
 
 .profile-image {
   width: 100%;
@@ -126,7 +116,7 @@ export default {
 }
 
 .skills-list {
-  width: 100%; 
+  width: 100%;
 }
 
 .category-title {
