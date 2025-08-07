@@ -1,30 +1,33 @@
 <template>
-    <div class="p-12 font-montserrat">
-      <h1 class="text-[64px] font-bold text-[#E55C0E]">{{ project?.title }}</h1>
-      <img :src="project?.image1" :alt="project?.title" class="mt-4 rounded-lg max-w-xs w-full" />
-      <p class="mt-6 text-xl max-w-3xl">
-        Voici la page dédiée au projet <strong>{{ project?.title }}</strong>.
-        Tu pourras bientôt y retrouver une description détaillée, le stack utilisé, les objectifs, et un lien vers la démo.
-      </p>
+  <div v-if="project">
+    <div :style="{ backgroundColor: project.colors.secondary, color: project.colors.primary }" class="min-h-screen p-8">
+      <h1 class="text-4xl font-bold mb-6">{{ project.title }}</h1>
+      <img :src="project.image1" alt="Project image" class="w-full mb-6 rounded-lg shadow-lg" />
+      <p class="text-lg">Bienvenue sur la page du projet {{ project.title }}.</p>
     </div>
-  </template>
-  
-  <script setup>
-  import { useRoute, useRouter } from 'vue-router'
-  import { ref, onMounted } from 'vue'
-  import projects from '@/utils/projects'
-  
-  const route = useRoute()
-  const router = useRouter()
-  const project = ref(null)
-  
-  onMounted(() => {
-    const found = projects.find(p => p.slug === route.params.slug)
-    if (!found) {
-      router.push('/404') // Redirige vers une vraie page 404 si elle existe
-    } else {
-      project.value = found
-    }
-  })
-  </script>
-  
+  </div>
+  <div v-else>
+    <p>Projet non trouvé.</p>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted, watch } from 'vue';
+import { useRoute } from 'vue-router';
+import projects from '@/utils/projects';
+
+const route = useRoute();
+const project = ref(null);
+
+const loadProject = () => {
+  project.value = projects.find(p => p.slug === route.params.slug);
+};
+
+onMounted(() => {
+  loadProject();
+});
+
+watch(() => route.params.slug, () => {
+  loadProject();
+});
+</script>
